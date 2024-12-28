@@ -1,0 +1,28 @@
+{
+  "name": "masterpiece",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace client\" \"npm run dev --workspace server\"",
+    "prod": "npm run prod --workspace server",
+    "build": "npm install && npm run client:build && npm run server:build",
+    "client:build": "npm run build --workspace client",
+    "server:build": "npm run build --workspace server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "dependencies": {
+    "concurrently": "^9.1.0",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
