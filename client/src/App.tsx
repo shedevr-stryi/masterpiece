@@ -5,6 +5,8 @@ import './App.css'
 
 import { getSantaMessage } from '../../shared/utils/getSantaMessage'
 import { API } from '../../shared/constants/api';
+import { Header } from './components/Header/Header';
+import { Footer } from './components/Footer/Footer';
 
 function App() {
   const [message, setMessage] = useState('');
@@ -21,7 +23,11 @@ function App() {
 
   return (
     <>
-      <div className='border border-red-600'>{message}</div>
+      <Header />
+      <main className="container mx-auto px-4">
+        {message}
+      </main>
+      <Footer />
     </>
   )
 }
