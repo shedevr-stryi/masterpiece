@@ -4,22 +4,19 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 import { getSantaMessage } from '../../shared/utils/getSantaMessage'
+import { API } from '../../shared/constants/api';
 
 function App() {
   const [count, setCount] = useState(0);
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    console.log('1111111');
-    
-    fetch('http://localhost:8000/api/message')
+    fetch(API.HEALTH)
       .then(data => data.json())
       .then(data => {
-        console.log('data', data)
         setMessage(data?.message);
         const msg = getSantaMessage('from client');
         console.log('msg', msg);
-        
       })
   }, [])
 
