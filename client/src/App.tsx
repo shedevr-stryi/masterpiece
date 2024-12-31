@@ -7,6 +7,7 @@ import { getSantaMessage } from '../../shared/utils/getSantaMessage'
 import { API } from '../../shared/constants/api';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
+import { CategoriesNav } from './components/CategoriesNav/CategoriesNav';
 
 function App() {
   const [message, setMessage] = useState('');
@@ -25,6 +26,7 @@ function App() {
     <>
       <Header />
       <main className="container mx-auto px-4">
+        <CategoriesNav />
         {message}
       </main>
       <Footer />
