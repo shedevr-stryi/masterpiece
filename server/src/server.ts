@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 import cors from 'cors';
 import { getSantaMessage } from '../../shared/utils/getSantaMessage';
+import { API } from '../../shared/constants/api';
 
 dotenv.config();
 
@@ -13,7 +14,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.resolve('../client/dist')));
 
   // TODO: remove
-  app.get('/api/message', (req: Request, res: Response) => {
+  app.get(API.HEALTH, (req: Request, res: Response) => {
     res.status(200).json({ 
       message: getSantaMessage('HO HO HO!'),
     });
@@ -29,7 +30,7 @@ if (process.env.NODE_ENV === 'production') {
     allowedHeaders: ['Content-Type'],
   }));
   
-  app.get('/api/message', (req: Request, res: Response) => {
+  app.get(API.HEALTH, (req: Request, res: Response) => {
     res.status(200).json({ 
       message: getSantaMessage('HO HO HO!'),
     });

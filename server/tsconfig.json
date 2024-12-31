@@ -10,9 +10,6 @@
 
     "outDir": "./dist",
     "baseUrl": ".",
-    "paths": {
-      "@shared/*": ["../shared/*"]
-    },
     "rootDir": ".."
   },
   "include": ["src/**/*", "../shared/**/*"]
